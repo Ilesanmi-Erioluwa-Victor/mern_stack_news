@@ -5,7 +5,7 @@ type Nav = {
   name: string;
   title: string;
   icon: object;
-  id: number;
+  id: string;
   link: string;
 };
 
@@ -22,7 +22,7 @@ const NavLink: Nav[] = [
 const Nav = () => {
   return (
     <div>
-      {NavLink.map((nav: any) => {
+      {NavLink.map((nav) => {
         return (
           <ul key={nav.id}>
             <li>{nav.name}</li>
