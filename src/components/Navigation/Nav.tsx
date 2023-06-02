@@ -37,23 +37,22 @@ const NavLink: Nav[] = [
 
 const Nav = (): React.ReactNode => {
   return (
-    <ul className='nav'>
+    <ul className='nav nav-tabs bg-warning'>
       {NavLink.map((nav) => {
         return (
-      
-            <li
-              title={nav.title}
-              className='nav-item'
-              key={nav.id}
+          <li
+            title={nav.title}
+            className='nav-item'
+            key={nav.id}
+          >
+            <a
+              href={nav.link}
+              className='nav-link  text-black'
             >
-              <a
-                href={nav.link}
-                className='nav-link'
-              >
-                {' '}
-                {nav.name}
-              </a>
-            </li>
+              {' '}
+              {nav.name}
+            </a>
+          </li>
         );
       })}
     </ul>
