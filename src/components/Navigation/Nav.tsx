@@ -1,6 +1,12 @@
 import React from 'react';
+import Link from 'next/link';
 import { v4 as uuidv4 } from 'uuid';
-import { HomeIcon, LockOpenIcon, UserPlusIcon } from '@heroicons/react/24/solid';
+import {
+  HomeIcon,
+  LockOpenIcon,
+  UserPlusIcon,
+} from '@heroicons/react/24/solid';
+
 type Nav = {
   name: string;
   title: string;
@@ -45,13 +51,12 @@ const Nav = (): React.ReactNode => {
             className='nav-item'
             key={nav.id}
           >
-            <a
+            <Link
               href={nav.link}
               className='nav-link  text-black'
             >
-              {' '}
               {nav.name}
-            </a>
+            </Link>
           </li>
         );
       })}
