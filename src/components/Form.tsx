@@ -45,9 +45,9 @@ const Form = (): JSX.Element => {
         />
       </fieldset>
 
-      <fieldset className='form-group'>
-        <button className="btn btn-outline-warning text-dark border border-blue-400 :hover-text-white">Register</button>
-      </fieldset>
+      <div className='form-group'>
+        <button className="btn btn-outline-warning">Register</button>
+      </div>
     </form>
   );
 };
