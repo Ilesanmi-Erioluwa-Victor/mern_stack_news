@@ -1,12 +1,5 @@
-import Image from 'next/image'
-import About from 'src/pages/about'
-import Register from 'src/pages/register'
+import Image from 'next/image';
 
 export default function Home() {
-  return (
-    <>
-      <About />
-      <Register />
-    </>
-  );
+  return <>Home page</>;
 }
