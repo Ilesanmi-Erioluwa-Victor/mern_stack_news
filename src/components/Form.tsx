@@ -6,9 +6,9 @@ type DataProps = {
   name: string;
   email: string;
   password: string;
-  success: boolean;
-  error: boolean;
-  buttonText: string;
+  success ? : boolean;
+  error ? : boolean;
+  buttonText ?: string;
 };
 const Form = (): JSX.Element => {
   const [data, setData] = useState<DataProps>({
@@ -20,20 +20,24 @@ const Form = (): JSX.Element => {
     buttonText: 'Register',
   });
 
-//   const handleInputChange = (e: any) => {
-//     const name = e.target.name;
-//     const value = e.target.value;
-//     setData({ ...data, [name]: value.trim() });
-//   };
+  //   const handleInputChange = (e: any) => {
+  //     const name = e.target.name;
+  //     const value = e.target.value;
+  //     setData({ ...data, [name]: value.trim() });
+  //   };
 
-  const handleInputChange = (name: string) =>(ev:any) => {
+  const handleInputChange = (name: string) => (ev: any) => {
     setData({ ...data, [name]: ev.target.value.trim() });
   };
-    const handleSubmit = (ev:any) => {
-        ev.preventDefault();
-        console.log(data)
-     
-  }
+  const handleSubmit = (ev: any) => {
+    ev.preventDefault();
+    console.log(data);
+    setData({
+      name: '',
+      email: '',
+        password: ''
+    });
+  };
   return (
     <form onSubmit={handleSubmit}>
       <fieldset className='form-group'>
@@ -47,9 +51,9 @@ const Form = (): JSX.Element => {
           type='text'
           className='form-control'
           placeholder='Enter your Name'
-          onChange={handleInputChange("name")}
-        //   name='name'
-        //   value={data.name}
+          onChange={handleInputChange('name')}
+          //   name='name'
+          //   value={data.name}
         />
       </fieldset>
 
@@ -64,9 +68,9 @@ const Form = (): JSX.Element => {
           type='email'
           className='form-control'
           placeholder='Enter your Email'
-          onChange={handleInputChange("email")}
-        //   name='email'
-        //   value={data.email}
+          onChange={handleInputChange('email')}
+          //   name='email'
+          //   value={data.email}
         />
       </fieldset>
 
@@ -81,9 +85,9 @@ const Form = (): JSX.Element => {
           type='password'
           className='form-control'
           placeholder='Enter your password '
-        //   name='password'
-        //   value={data.password}
-          onChange={handleInputChange("password")}
+          //   name='password'
+          //   value={data.password}
+          onChange={handleInputChange('password')}
         />
       </fieldset>
 
