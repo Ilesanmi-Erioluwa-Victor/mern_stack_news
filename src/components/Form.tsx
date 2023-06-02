@@ -1,6 +1,21 @@
-import React from 'react';
+import React, { useState} from 'react';
 
+
+type DataProps = {
+    name : string;
+    email :  string;
+password : string;
+success: boolean;
+
+}
 const Form = (): JSX.Element => {
+    const [data, setData]: DataProps = {
+      name: '',
+      email: '',
+      password: '',
+      success: false,
+    };
+
   return (
     <form>
       <fieldset className='form-group'>
