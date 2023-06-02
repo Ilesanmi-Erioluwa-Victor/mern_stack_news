@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 
 type DataProps = {
@@ -5,6 +7,8 @@ type DataProps = {
   email: string;
   password: string;
   success: boolean;
+  error: boolean;
+  buttonText: string;
 };
 const Form = (): JSX.Element => {
   const [data, setData] = useState<DataProps>({
@@ -12,14 +16,22 @@ const Form = (): JSX.Element => {
     email: '',
     password: '',
     success: false,
+    error: false,
+    buttonText: 'Register',
   });
+
+  const handleInputChange = (e: any) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    setData({ ...data, [name]: value.trim() });
+  };
 
   return (
     <form>
       <fieldset className='form-group'>
         <label
           htmlFor='name'
-          className='text-lg'
+          className='fs-4 pb-2'
         >
           Name
         </label>
@@ -27,13 +39,16 @@ const Form = (): JSX.Element => {
           type='text'
           className='form-control'
           placeholder='Enter your Name'
+          onChange={handleInputChange}
+          name='name'
+          value={data.name}
         />
       </fieldset>
 
       <fieldset className='form-group'>
         <label
           htmlFor='email'
-          className='text-lg'
+          className='fs-4 pb-2'
         >
           Email
         </label>
@@ -41,13 +56,16 @@ const Form = (): JSX.Element => {
           type='text'
           className='form-control'
           placeholder='Enter your Email'
+          onChange={handleInputChange}
+          name='email'
+          value={data.email}
         />
       </fieldset>
 
       <fieldset className='form-group'>
         <label
           htmlFor='password'
-          className='text-lg'
+          className='fs-4 pb-2'
         >
           Password
         </label>
@@ -55,11 +73,14 @@ const Form = (): JSX.Element => {
           type='text'
           className='form-control'
           placeholder='Enter your password '
+          name='password'
+          value={data.password}
+          onChange={handleInputChange}
         />
       </fieldset>
 
       <div className='form-group'>
-        <button className='btn btn-outline-warning'>Register</button>
+        <button className='btn btn-outline-warning fs-4'>Register</button>
       </div>
     </form>
   );
