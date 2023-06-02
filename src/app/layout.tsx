@@ -37,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={inter.className}>
-        <div>
+        <>
           {head()}
           {Nav()}
           <div className='container pt-5 pb-5'>{children}</div>
@@ -45,7 +45,7 @@ export default function RootLayout({
             <ProgressBar />
           </Suspense>
         <Footer />
-        </div>
+        </>
       </body>
     </html>
   );
