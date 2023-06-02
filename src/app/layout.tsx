@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import Head from 'next/head';
 import { Inter } from 'next/font/google';
-
+import "nprogress/nprogress.css"
 import './globals.css';
 import Nav from 'src/components/Navigation/Nav';
 import { ProgressBar } from 'src/components/ProgressBar/ProgressBar';
@@ -28,7 +28,7 @@ export default function RootLayout({
       integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u'
       crossOrigin='anonymous'
       />
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" />
+      {/* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" /> */}
       </>
   );
 
