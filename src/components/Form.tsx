@@ -1,20 +1,18 @@
-import React, { useState} from 'react';
-
+import React, { useState } from 'react';
 
 type DataProps = {
-    name : string;
-    email :  string;
-password : string;
-success: boolean;
-
-}
+  name: string;
+  email: string;
+  password: string;
+  success: boolean;
+};
 const Form = (): JSX.Element => {
-    const [data, setData]: DataProps = {
-      name: '',
-      email: '',
-      password: '',
-      success: false,
-    };
+  const [data, setData] = useState<DataProps>({
+    name: '',
+    email: '',
+    password: '',
+    success: false,
+  });
 
   return (
     <form>
@@ -61,7 +59,7 @@ const Form = (): JSX.Element => {
       </fieldset>
 
       <div className='form-group'>
-        <button className="btn btn-outline-warning">Register</button>
+        <button className='btn btn-outline-warning'>Register</button>
       </div>
     </form>
   );
