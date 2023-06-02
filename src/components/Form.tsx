@@ -20,15 +20,19 @@ const Form = (): JSX.Element => {
     buttonText: 'Register',
   });
 
-  const handleInputChange = (e: any) => {
-    const name = e.target.name;
-    const value = e.target.value;
-    setData({ ...data, [name]: value.trim() });
-  };
+//   const handleInputChange = (e: any) => {
+//     const name = e.target.name;
+//     const value = e.target.value;
+//     setData({ ...data, [name]: value.trim() });
+//   };
 
+  const handleInputChange = (name: string) =>(ev:any) => {
+    setData({ ...data, [name]: ev.target.value.trim() });
+  };
     const handleSubmit = (ev:any) => {
         ev.preventDefault();
         console.log(data)
+     
   }
   return (
     <form onSubmit={handleSubmit}>
@@ -43,9 +47,9 @@ const Form = (): JSX.Element => {
           type='text'
           className='form-control'
           placeholder='Enter your Name'
-          onChange={handleInputChange}
-          name='name'
-          value={data.name}
+          onChange={handleInputChange("name")}
+        //   name='name'
+        //   value={data.name}
         />
       </fieldset>
 
@@ -60,9 +64,9 @@ const Form = (): JSX.Element => {
           type='email'
           className='form-control'
           placeholder='Enter your Email'
-          onChange={handleInputChange}
-          name='email'
-          value={data.email}
+          onChange={handleInputChange("email")}
+        //   name='email'
+        //   value={data.email}
         />
       </fieldset>
 
@@ -77,9 +81,9 @@ const Form = (): JSX.Element => {
           type='password'
           className='form-control'
           placeholder='Enter your password '
-          name='password'
-          value={data.password}
-          onChange={handleInputChange}
+        //   name='password'
+        //   value={data.password}
+          onChange={handleInputChange("password")}
         />
       </fieldset>
 
