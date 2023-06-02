@@ -1,8 +1,10 @@
+import { Suspense } from 'react';
 import Head from 'next/head';
 import { Inter } from 'next/font/google';
-import NProgress from "nprogress"
+
 import './globals.css';
 import Nav from 'src/components/Navigation/Nav';
+import { ProgressBar } from 'src/components/ProgressBar/ProgressBar';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -37,6 +39,9 @@ export default function RootLayout({
           {head()}
           {Nav()}
           <div className='container pt-5 pb-5'>{children}</div>
+          <Suspense fallback={null}>
+            <ProgressBar />
+          </Suspense>
         </div>
       </body>
     </html>
