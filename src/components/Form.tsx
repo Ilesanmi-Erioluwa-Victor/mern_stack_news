@@ -26,8 +26,12 @@ const Form = (): JSX.Element => {
     setData({ ...data, [name]: value.trim() });
   };
 
+    const handleSubmit = (ev:any) => {
+        ev.preventDefault();
+        console.log(data)
+  }
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <fieldset className='form-group'>
         <label
           htmlFor='name'
@@ -53,7 +57,7 @@ const Form = (): JSX.Element => {
           Email
         </label>
         <input
-          type='text'
+          type='email'
           className='form-control'
           placeholder='Enter your Email'
           onChange={handleInputChange}
@@ -70,7 +74,7 @@ const Form = (): JSX.Element => {
           Password
         </label>
         <input
-          type='text'
+          type='password'
           className='form-control'
           placeholder='Enter your password '
           name='password'
