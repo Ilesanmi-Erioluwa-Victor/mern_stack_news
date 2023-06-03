@@ -50,11 +50,19 @@ const userSchema = new mongoose.Shema(
 );
 
 // Virtual fields
-userSchema.virtual('password').set(function (password) {
-    
-}).get(function () {
-    return this._password
-});
+userSchema
+  .virtual('password')
+  .set(function (password) {
+    //   create a temporary password called _password
+    this._password = password;
+
+    // generate salt
+
+    // encrypt password
+  })
+  .get(function () {
+    return this._password;
+  });
 
 // methods > authenticate method, encrypt password method, makeSalt value method
 userSchema.methods = {};
