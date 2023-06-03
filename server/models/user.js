@@ -70,7 +70,7 @@ userSchema
 // methods > authenticate method, encrypt password method, makeSalt value method
 userSchema.methods = {
     authenticate: function (plainText) {
-        return 
+        return this.encryptPassword(plainText) == this.hashed_password
   },
 
   // used in virtual
@@ -91,3 +91,4 @@ userSchema.methods = {
     return Math.round(new Date().valueOf() * Math.random() + '');
   },
 };
+
