@@ -3,7 +3,8 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
-require('dotenv');
+require('dotenv').config();
+
 
 const app = express();
 const authRoutes = require('./routes/auth');
