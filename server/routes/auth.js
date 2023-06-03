@@ -4,6 +4,6 @@ const router = express.Router();
 const { registerCtrl } = require('../controllers/authCtrl');
 
 
-router.get('/register', registerCtrl);
+router.post('/register', registerCtrl);
 
 module.exports = router;
