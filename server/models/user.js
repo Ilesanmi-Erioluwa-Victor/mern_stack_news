@@ -10,5 +10,11 @@ const userSchema = new mongoose.Shema({
         index: true,
         lowercase : true
     },
-    
+
+    name: {
+        type: String,
+        trim: true,
+        required: true,
+        max : 40
+    }
 })
