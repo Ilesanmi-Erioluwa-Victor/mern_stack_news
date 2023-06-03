@@ -28,9 +28,10 @@ const userSchema = new mongoose.Shema({
 
   hashed_password: {
     type: String,
-    trim: true,
     required: true,
-    unique: true,
-    lowercase: true,
   },
+
+  salt: String,
+
+  role: {},
 });
