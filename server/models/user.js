@@ -69,6 +69,12 @@ userSchema
 // methods > authenticate method, encrypt password method, makeSalt value method
 userSchema.methods = {
     encryptPassword: function (password) {
-        if
+        if (!password) return;
+
+        try {
+            
+        } catch (error) {
+            
+        }
     },
 };
