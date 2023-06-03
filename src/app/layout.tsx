@@ -5,11 +5,12 @@ import { Inter } from 'next/font/google';
 import 'nprogress/nprogress.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-store
+
 import './globals.css';
 import Nav from 'src/components/Navigation/Nav';
 import { ProgressBar } from 'src/components/ProgressBar/ProgressBar';
 import Footer from 'src/components/Footer/Footer';
+import { store } from 'src/redux/store';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -38,9 +39,8 @@ export default function RootLayout({
   );
 
   return (
-    <>
-    <Provider store={store}>
     <html lang='en'>
+      <Provider store={store}>
       <body className={inter.className}>
         <>
           {head()}
@@ -52,8 +52,8 @@ export default function RootLayout({
           <Footer />
         </>
       </body>
-    </html>
         <Provider />
-        </>
+    </html>
+      
   );
 }
