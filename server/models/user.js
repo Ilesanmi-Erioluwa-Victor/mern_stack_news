@@ -67,4 +67,8 @@ userSchema
   });
 
 // methods > authenticate method, encrypt password method, makeSalt value method
-userSchema.methods = {};
+userSchema.methods = {
+    encryptPassword: function (password) {
+        if
+    },
+};
