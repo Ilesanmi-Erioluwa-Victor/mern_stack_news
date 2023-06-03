@@ -69,7 +69,11 @@ userSchema
 
 // methods > authenticate method, encrypt password method, makeSalt value method
 userSchema.methods = {
-    // used in virtual
+    authenticate: function (plainText) {
+        return 
+  },
+
+  // used in virtual
   encryptPassword: function (password) {
     if (!password) return;
 
@@ -81,9 +85,9 @@ userSchema.methods = {
     } catch (error) {
       return;
     }
-    },
-    
-    makeSalt: function () {
-        return Math.round(new Date().valueOf() * Math.random()  + "")
-    }
+  },
+
+  makeSalt: function () {
+    return Math.round(new Date().valueOf() * Math.random() + '');
+  },
 };
