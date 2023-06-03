@@ -6,8 +6,8 @@ type DataProps = {
   name: string;
   email: string;
   password: string;
-  success ? : boolean;
-  error ? : boolean;
+  success ? : string;
+  error ? : string;
   buttonText ?: string;
 };
 const Form = (): JSX.Element => {
@@ -15,8 +15,8 @@ const Form = (): JSX.Element => {
     name: '',
     email: '',
     password: '',
-    success: false,
-    error: false,
+    success: "",
+    error: "",
     buttonText: 'Register',
   });
 
@@ -27,7 +27,7 @@ const Form = (): JSX.Element => {
   //   };
 
   const handleInputChange = (name: string) => (ev: any) => {
-    setData({ ...data, [name]: ev.target.value.trim() });
+    setData({ ...data, [name]: ev.target.value.trim(), error : "", success : "", buttonText : "Register" });
   };
   const handleSubmit = (ev: any) => {
     ev.preventDefault();
