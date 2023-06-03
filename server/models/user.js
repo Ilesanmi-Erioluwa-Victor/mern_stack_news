@@ -69,8 +69,8 @@ userSchema
 
 // methods > authenticate method, encrypt password method, makeSalt value method
 userSchema.methods = {
-    authenticate: function (plainText) {
-        return this.encryptPassword(plainText) == this.hashed_password
+  authenticate: function (plainText) {
+    return this.encryptPassword(plainText) == this.hashed_password;
   },
 
   // used in virtual
@@ -92,3 +92,4 @@ userSchema.methods = {
   },
 };
 
+module.exports = mongoose.model('User', userSchema);
