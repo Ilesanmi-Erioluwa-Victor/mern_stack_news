@@ -8,6 +8,6 @@ app.get('api/register', (req, res) => {
   });
 });
 
-const PORT = process.env.port || 5000;
+const PORT = process.env.PORT || 8000;
 
 app.listen(PORT, () =>  console.log(`You are successfully connected to : ${PORT}`));
