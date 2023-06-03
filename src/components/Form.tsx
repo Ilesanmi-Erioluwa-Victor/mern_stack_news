@@ -91,14 +91,12 @@ const Form = (): JSX.Element => {
           </fieldset>
 
           <div className='form-group'>
-            <button className='btn btn-outline-warning fs-4'>
+            <button className='btn btn-outline-warning btn-lg fs-4' type='submit'>
               {buttonText}
             </button>
           </div>
-            </form>
-            <div>
-                {JSON.stringify(data)}
-            </div>
+        </form>
+        <div>{JSON.stringify(data)}</div>
       </>
     );
 };
