@@ -7,3 +7,7 @@ app.get('api/register', (req, res) => {
     data: 'You hit register endpoint',
   });
 });
+
+const PORT = process.env.port || 5000;
+
+app.listen(PORT, () =>  console.log(`You are successfully connected to : ${PORT}`));
