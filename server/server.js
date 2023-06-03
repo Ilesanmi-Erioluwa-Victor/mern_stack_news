@@ -20,7 +20,7 @@ app.use(express.json());
 // Routes
 app.use('/api/', authRoutes);
 
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT;
 
 app.listen(PORT, () =>
   console.log(`You are successfully connected to : ${PORT}`)
