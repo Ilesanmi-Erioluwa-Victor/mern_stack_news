@@ -1,12 +1,9 @@
 const express = require('express');
-
 const router = express.Router();
 
-router.get('/register', (req, res) => {
-  res.json({
-    data: 'You hit register endpoint',
-    status: 'Success',
-  });
-});
+const { registerCtrl } = require('../controllers/authCtrl');
+
+
+router.get('/register', registerCtrl);
 
 module.exports = router;
