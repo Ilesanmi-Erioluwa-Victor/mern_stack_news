@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const crypto = require('crypto');
 
 const userSchema = new mongoose.Shema(
   {
@@ -68,13 +69,16 @@ userSchema
 
 // methods > authenticate method, encrypt password method, makeSalt value method
 userSchema.methods = {
-    encryptPassword: function (password) {
-        if (!password) return;
+  encryptPassword: function (password) {
+    if (!password) return;
 
-        try {
-            
-        } catch (error) {
-            
-        }
-    },
+    try {
+      return crypto
+        .createHmac('sha1', this.salt)
+        .update(password)
+        .digest('hex');
+    } catch (error) {
+      return;
+    }
+  },
 };
