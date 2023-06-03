@@ -22,7 +22,15 @@ const userSchema = new mongoose.Shema({
     type: String,
     trim: true,
     required: true,
-      unique: true,
-    lowercase : true
+    unique: true,
+    lowercase: true,
+  },
+
+  hashed_password: {
+    type: String,
+    trim: true,
+    required: true,
+    unique: true,
+    lowercase: true,
   },
 });
