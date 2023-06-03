@@ -42,4 +42,6 @@ const userSchema = new mongoose.Shema({
         data: String,
         default : ""
     }
+}, {
+    timestamps : true
 });
