@@ -50,9 +50,7 @@ const userSchema = new mongoose.Shema(
 );
 
 // Virtual fields
-userSchema.virtual();
+userSchema.virtual('password');
 
 // methods > authenticate method, encrypt password method, makeSalt value method
-userSchema.methods = {
-
-}
+userSchema.methods = {};
