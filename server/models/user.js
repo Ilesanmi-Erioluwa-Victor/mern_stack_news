@@ -57,7 +57,7 @@ userSchema
     this._password = password;
 
     // generate salt
-
+    this.salt = this.makeSalt();
     // encrypt password
   })
   .get(function () {
