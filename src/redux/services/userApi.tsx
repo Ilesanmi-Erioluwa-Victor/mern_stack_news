@@ -1,3 +1,4 @@
+import { AnyAction } from '@reduxjs/toolkit';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { Baseurl } from 'src/utils/Baseurl';
 
@@ -14,13 +15,13 @@ export const userApi = createApi({
     baseUrl: Baseurl,
   }),
   endpoints: (builder) => ({
-      registerUser: builder.mutation({
-          query: ( user : User) => ({
-              url: "/register",
-              method: "POST",
-              body : user
-        })
-    })
+    registerUser: builder.mutation<User, Partial<User>>({
+      query: (body) => ({
+        url: '/register',
+        method: 'POST',
+        body,
+      }),
+    }),
     // getUserById: builder.query<User, { id: string }>({
     //   query: ({ id }) => `users/${id}`,
     // }),
