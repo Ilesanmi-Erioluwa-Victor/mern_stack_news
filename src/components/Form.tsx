@@ -55,7 +55,7 @@ const Form = (): JSX.Element => {
       };
       report(formData)
         .unwrap()
-        .then(() => {})
+        .then((data) => console.log(data))
         .then((error) => {
           console.log(error);
         });
