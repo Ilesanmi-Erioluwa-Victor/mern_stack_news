@@ -14,13 +14,20 @@ export const userApi = createApi({
     baseUrl: Baseurl,
   }),
   endpoints: (builder) => ({
-    getUsers: builder.query<User[], null>({
-      query: () => '/register',
-    }),
+      registerUser: builder.mutation({
+          query: ( user : User) => ({
+              url: "/register",
+              method: "POST",
+              body : user
+        })
+    })
     // getUserById: builder.query<User, { id: string }>({
     //   query: ({ id }) => `users/${id}`,
     // }),
   }),
 });
 
-export const { useGetUsersQuery, useGetUserByIdQuery } = userApi;
+export const {
+    useRegisterUserMutation,
+    // useGetUserByIdQuery
+} = userApi;
