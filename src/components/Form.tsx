@@ -1,6 +1,10 @@
 'use client';
+
 import React, { useState } from 'react';
-import axios from "axios";
+import { useAppDispatch, useAppSelector } from 'src/redux/hooks';
+import { useRegisterUserMutation } from 'src/redux/services/userApi';
+useRegisterUserMutation
+useAppDispatch
 
 
 type DataProps = {
