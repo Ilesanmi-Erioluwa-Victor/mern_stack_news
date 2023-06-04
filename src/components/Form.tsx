@@ -61,7 +61,7 @@ const Form = (): JSX.Element => {
         });
       // dispatch(useRegisterUserMutation({ name, password, email }));
     } catch (error) {}
-    console.log(data);
+   
     // setData({
     //   name: '',
     //   email: '',
