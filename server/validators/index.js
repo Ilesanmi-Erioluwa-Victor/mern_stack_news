@@ -8,4 +8,6 @@ exports.runValidation = (req, res, next) => {
       error: errors.array()[0].msg,
     });
   }
+
+  next();
 };
