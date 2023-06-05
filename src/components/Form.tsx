@@ -66,6 +66,7 @@ const Form = (): JSX.Element => {
     //   name: '',
     //   email: '',
     //   password: '',
+
     // });
   };
   return (
