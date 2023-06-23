@@ -11,7 +11,6 @@ export function ProgressBar() {
   const searchParams = useSearchParams();
 
     useEffect(() => {
-      
       const url = pathname + searchParams.toString();
       NProgress.start(url);
       NProgress.done(url);
